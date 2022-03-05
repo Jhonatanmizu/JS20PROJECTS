@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  background-color: #ad00ee;
+  background-color: #fff;
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -16,4 +16,40 @@ body {
   justify-content: center;
 
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230c0e14' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.quote-container {
+  width: auto;
+  max-width: 900px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.quote-text {
+  font-size: 2.75rem;
+}
+.long-quote {
+  font-size: 2rem;
+}
+.fa-quote-left {
+  font-size: 4rem;
+}
+.quote-author {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1000px) {
+  .quote-container {
+    margin: auto 10px;
+  }
+  .quote-text {
+    font-size: 2.5rem;
+  }
 }
