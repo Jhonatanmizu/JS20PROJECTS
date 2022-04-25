@@ -1,6 +1,11 @@
 let quotes = [];
 let quoteContainer = document.querySelector("#quote-container");
 let loader = document.querySelector("#loader");
+const btn = document.querySelector("#new-quote");
+const btnShareOnTwitter = document.querySelector("#twitter");
+btn.addEventListener("click", () => {
+  newQuote();
+});
 function getRandomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -36,8 +41,6 @@ function addQuote(text, author) {
   quote.innerHTML = text;
   spanAuthor.innerHTML = author;
 }
-getQuotes("https://type.fit/api/quotes");
-
 function loading() {
   loader.hidden = false;
   quoteContainer.hidden = true;
@@ -49,7 +52,16 @@ function complete() {
   console.log(loader.hidden, quoteContainer.hidden);
 }
 
-const btn = document.querySelector("#new-quote");
-btn.addEventListener("click", () => {
-  newQuote();
+getQuotes("https://type.fit/api/quotes");
+
+function shareOnTwitter() {
+  const quote = document.querySelector("#quote");
+  const spanAuthor = document.querySelector("#author");
+
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quote.textContent} - ${spanAuthor.textContent}`;
+  window.open(twitterUrl, "_blank");
+}
+
+btnShareOnTwitter.addEventListener("click", () => {
+  shareOnTwitter();
 });
