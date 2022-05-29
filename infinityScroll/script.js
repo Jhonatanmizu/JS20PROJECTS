@@ -14,7 +14,7 @@ async function getRandomImages(url){
     try{
 
       const resp = await fetch(url);
-      const data = await resp.json();
+      const photos = await resp.json();
       photos = data;
       renderImages(photos);
     }catch(err){
@@ -38,7 +38,7 @@ function imageLoaded(){
 
 function renderImages(imgs){
   totalImages = imgs.length
-  
+
   imgs.forEach((photo, i) => {
     const item = document.createElement('a');
     setAttributes(item,{
